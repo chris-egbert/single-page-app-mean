@@ -1,0 +1,46 @@
+/* Global Application Styles go here */
+
+/* ---- General element styling ---- */
+.section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+/* ---- Bootstrap Style Extensions ---- */
+
+/* Vertical Spacer */
+.spacer-vertical-xs {
+  padding-top: 2px;
+}
+.spacer-vertical-s {
+  padding-top: 5px;
+}
+.spacer-vertical-m {
+  padding-top: 10px;
+}
+.spacer-vertical-l {
+  padding-top: 20px;
+}
+.spacer-vertical-xl {
+  padding-top: 40px;
+}
+
+
+/* Padding */
+.padding-xs {
+  padding: 2px;
+}
+.padding-s {
+  padding: 5px;
+}
+.padding-m {
+  padding: 10px;
+}
+.padding-l {
+  padding: 20px;
+}
+.padding-xl {
+  padding: 40px;
+}
+

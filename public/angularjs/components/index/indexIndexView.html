@@ -1,0 +1,32 @@
+<div class="section">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 padding-m">
+        <div class="jumbotron">
+          <h1>{{ welcome }}</h1>
+          <p>This app is an example single page app built on the MEAN stack (<strong>M</strong>ongoDB, <strong>E</strong>xpress, <strong>A</strong>ngularJS, <strong>N</strong>ode.js)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+          <p>This app uses the following technologies:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3" ng-repeat="(category, techGroup) in appTechs">
+        <h2>{{category | uppercase}}</h2>
+        <ul>
+          <li ng-repeat="appTech in techGroup">{{appTech.name}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <a class='btn btn-primary' href='/#!/techs'>Angular Route to a CRUD</a>
+    </div>
+
+  </div>
+</div>

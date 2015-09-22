@@ -1,0 +1,83 @@
+<!-- <div class="section"> -->
+
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Technologies</h1>
+    </div>
+
+  </div>
+
+<!-- </div> -->
+
+<div class="section bg-info">
+  <div class="container">
+    <p>Vote for your favorite technologies below.  Think one is missing?  Add it!</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <button type="button" class="btn btn-success" ng-click="showModal()"><span class="glyphicon glyphicon-plus"></span> Add New</button>
+
+    <div class="spacer-vertical-s">
+    <!-- Tech Tabs -->
+    <tabset>
+      <tab ng-repeat="category in categoryOptions track by category" heading="{{category}}" active="tab.active">
+        <div ng-repeat="tech in techs | filter: {category: category} | orderBy: '-votes' track by tech._id"  class="padding-m" ng-class="{'bg-success': $first}">
+          <tech-vote></tech-vote>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+</div>
+
+<!-- ____ Supporting Views ____ -->
+
+<!-- Add Tech form -->
+<script type="text/ng-template" id="techModalView.html">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Propose a Technology</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <form>
+            <div class="form-group">
+                <label for="name">Technology Name</label>
+                <input ng-model="tech.name" name="name" class="form-control" placeholder="jQuery, etc" value="{{tech.name}}"/>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select ng-model="tech.category" name="category" class="form-control">
+                    <option ng-repeat="categoryValue in categoryOptions" value="{{categoryValue}}">{{categoryValue}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button ng-click="create()" class="btn btn-success">Add</button>
+            </div>
+
+        </form>
+
+    </div>
+</script>
+
+<!-- Voting layout -->
+<script type="text/ng-template" id="techVoteTemplate.html">
+    <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            {{tech.name}}
+        </div>
+        <div class="col-xs-2 col-sm-1">
+            {{tech.votes}}
+        </div>
+        <div class="col-xs-4 col-sm-2">
+            <button ng-if="!votedForTech(tech)" ng-click="vote(tech)" class="btn btn-default btn-xs">Vote</button>
+            <span ng-if="votedForTech(tech)" class="glyphicon glyphicon-ok"> Voted</span>
+        </div>
+    </div>
+</script>
+

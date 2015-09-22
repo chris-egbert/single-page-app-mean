@@ -1,0 +1,34 @@
+doctype html
+
+html(lang="en")
+
+  head
+
+    // Environment
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    // For SEO without hashbangs
+    // meta(name='fragment', content='!')
+
+    // For NG-Route
+    base(href="/")
+
+    // Identity
+    title Example Single Page App
+    meta(name='description', content='#{description}')
+
+    // Styles
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/assets/css/global.css')
+
+    // Scripts should be loaded dynamically by Require.js
+
+  body
+    // #nav(ng-include="'/angularjs/components/common/menuView.html'")
+    #nav
+
+    div(ng-view)
+
+    script(src="/bower_components/requirejs/require.js", data-main="/assets/js/bootstrap.js")

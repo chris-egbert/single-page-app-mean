@@ -1,0 +1,21 @@
+{
+  "name": "my-app-2",
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "angular-resource": "latest",
+    "angular-animate": "latest",
+    "angular-cookies": "latest",
+    "angular-mocks": "latest",
+    "angular-route": "latest",
+    "bootstrap": "latest",
+    "angular-bootstrap": "latest",
+    "angular-ui-router": "latest",
+    "angular-ui-select": "latest",
+    "angular-sanitize": "latest",
+    "requirejs" : "latest",
+    "requirejs-domready" : "latest",
+    "react" : "latest",
+    "react-bootstrap" : "latest"
+  }
+}
